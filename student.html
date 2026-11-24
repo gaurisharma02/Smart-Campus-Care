@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - CampusCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h2>CampusCare</h2>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="/complaint">New Complaint</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <section class="features">
+        <h1>Student Dashboard</h1>
+        <p>Welcome, {{ name }}!</p>
+        <p>Welcome to your campus complaint portal.</p>
+
+        <br>
+
+        <div class="cards">
+            <div class="card">
+                <h3>📝 Submit Complaint</h3>
+                <p>Report any problem in your college.</p>
+                <br>
+                <a href="/complaint" class="btn">Submit Now</a>
+            </div>
+
+            <div class="card">
+                <h3>📋 My Complaints</h3>
+                <p>View your submitted complaints.</p>
+                <br>
+                <a href="{{ url_for('my_complaints') }}" class="btn">View Complaints</a>
+            </div>
+
+            <div class="card">
+                <h3>📊 Complaint Status</h3>
+                <p>Check the progress of your complaints.</p>
+                <br>
+                <a href="{{ url_for('my_complaints') }}" class="btn">Check Status</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

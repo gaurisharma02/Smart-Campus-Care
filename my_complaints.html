@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Complaints - CampusCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h2>CampusCare</h2>
+        <nav>
+            <a href="{{ url_for('student') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <section class="features">
+        <h1>My Complaints</h1>
+
+        {% if complaints %}
+            <div class="cards">
+                {% for complaint in complaints %}
+                    <div class="card">
+                        <h3>{{ complaint['title'] }}</h3>
+                        <p><b>Complaint ID:</b> {{ complaint['id'] }}</p>
+                        <p><b>Category:</b> {{ complaint['category'] }}</p>
+                        <p><b>Description:</b> {{ complaint['description'] }}</p>
+                        <p><b>Location:</b> {{ complaint['location'] }}</p>
+                        <p><b>Date:</b> {{ complaint['date'] }}</p>
+                        <p><b>Status:</b> {{ complaint['status'] }}</p>
+
+                        {% if complaint['image'] %}
+                            <img src="{{ url_for('static', filename='uploads/' + complaint['image']) }}" width="150">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>You have not submitted any complaints yet.</p>
+        {% endif %}
+
+        <br>
+        <a href="{{ url_for('student') }}" class="btn">Back to Dashboard</a>
+    </section>
+
+</body>
+</html>

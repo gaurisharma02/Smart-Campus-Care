@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Complaint System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body><header>
+    <h2>CampusCare</h2>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Smart Campus Complaint Management System</h1>
+    <p>Your Campus, Your Voice, Our Responsibility.</p>
+
+    <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+</section>
+
+<section class="features">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>📝 Submit Complaint</h3>
+            <p>Report any campus-related issue easily.</p>
+        </div>
+
+        <div class="card">
+            <h3>📌 Track Complaint</h3>
+            <p>Check the status of your complaints.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Quick Resolution</h3>
+            <p>Get updates from the administration.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 CampusCare | Smart Campus Project</p>
+</footer>
+
+</body>
+</html>
